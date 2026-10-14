@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html lang="en"> <head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up | Medicoed</title>
+<link rel="stylesheet" href="./signup.css">
+<script src="script.js" defer></script>
+
+</head>
+
+<body>
+ <main class="card">
+
+    <section class="card__visual" aria-hidden="true">
+       <video src="./From Klickpin.com- 22 Snack Board Ideas That Look So Expensive-pin-id-685391637064971127.mp4" autoplay muted loop></video>
+    </section>
+
+    <section class="card__form">
+      <a href="#" class="back">&larr; Go back</a>
+
+      <div class="heading">
+        <p class="heading__large">Sign up</p>
+        <h1 class="heading__small">Start learning with
+           Medicoed today.</h1>
+      </div>
+
+     
+ <form id="userForm" class="form">
+
+  <input
+    id="name"
+    name="name"
+    type="text"
+    placeholder="Full name"
+    required
+    autocomplete="name"
+    style="text-transform: uppercase;"
+  />
+
+  <input
+    id="email"
+    name="email"
+    type="email"
+    placeholder="Email address"
+    required
+    autocomplete="username"
+  />
+
+  <input
+    id="password"
+    name="password"
+    type="password"
+    placeholder="Password"
+    required
+    autocomplete="new-password"
+  />
+ 
+
+<div class="choice">
+   <p>I am a - <br> </p>
+
+    <label for="student">
+      <input type="radio" id="student" name="role" value="student" required/>
+      Student<br>
+      </label>
+       
+      <label for="educator">
+        <input type="radio" id="educator" name="role" value="educator" required/>
+        Educator<br>
+      </label>
+
+       <label for="admin">
+         <input type="radio" id="admin" name="role" value="admin" required/>
+          Admin
+     </label>
+</div>
+
+
+  <button type="submit">Sign in</button>
+  <div id="or"> <h1>or</h1></div>
+  <button type="button">Continue with Google</button>
+   
+
+  <p id="formMessage" class="form__note" role="status"></p>
+  <p class="form__note"> Already have an account?<a href="./login.html">Login.</a></p>
+
+ </form>
+</section>
+
+ </main>
+
+</body>
+</html>
+
+
