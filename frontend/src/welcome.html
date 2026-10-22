@@ -4,16 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome | Medicoed</title>
+
   <link rel="stylesheet" href="./welcome.css">
-  <script src="./script.js" defer></script>
+  <link rel="stylesheet" href="./FlowerPattern.css">
+
+  <script type="module" src="./script.ts"></script>
+  <script type="module" src="./main.tsx"></script>
 </head>
 <body>
 
   <main class="welcome-page">
     <h1 id="welcomeMessage">Welcome Back!</h1>
-    <p>We're happy  to  have  you  learning  with Medicoed.</p>
-    <a href="./signup.html">Back  to  Sign Up</a>
+
+    <p>We're happy to have you learning with Medicoed.</p>
+
+    <a href="./signup.html">Back to Sign Up</a>
   </main>
+
+  <!-- React renders the flower artwork here -->
+  <div id="flower-root"></div>
+
 
 </body>
 </html>

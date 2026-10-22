@@ -1,109 +1,172 @@
+
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
+/* Page background */
 body {
-  height: 100vh;
-  display: flex;             
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
- 
-  object-fit: cover;
-  background-position: center;
-  background-color: rgb(14, 178, 232);
- 
+  min-height: 100vh;
+  background-clip: ;
+  font-family: Georgia, serif;
 }
 
+/* Main two-column card */
 .card {
-  width: 100%;
-  width: 900px;
+  width: min(900px, 100%);
   min-height: 460px;
-  display: grid;
+  display: grid;  
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   padding: 12px;
-  background:white;
+  background: white;
   border-radius: 24px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
+/* Center card on the signup page only */
+.signup-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* Left-side video */
 .card__visual {
+  min-width: 0;
+  min-height: 436px;
+  overflow: hidden;
   border-radius: 16px;
 }
 
 .card__visual > video {
+  display: block;
   width: 100%;
   height: 100%;
+  min-height: 436px;
   object-fit: cover;
+  object-position: center;
   border-radius: 16px;
 }
 
+
+.card__visual > video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+}
+
+/* Right-side form panel */
 .card__form {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 24px 28px;
 }
 
+/* Go back link */
 .back {
   align-self: flex-start;
   font-size: 15px;
   color: #222;
   text-decoration: none;
-  
+  margin-bottom: 12px;
 }
 
-.heading{
+.back:hover {
+  text-decoration: underline;
+}
+
+/* Heading */
+.heading {
   margin-bottom: 20px;
+}
+
+.heading__large {
+  margin-top: 12px;
+  font-family: Georgia, serif;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #111;
 }
 
 .heading__small {
   font-size: 18px;
+  line-height: 1.5;
   color: #333;
   font-weight: 400;
-  font-family: Georgia, serif; 
-}
-
-.heading__large {
   font-family: Georgia, serif;
-  font-size: 42px;
-  font-weight: 500;
-  color: #111;
-  margin-top: 45px;
-
 }
 
-.choice > p{
+/* Role selection */
+.choice > p {
   font-size: 20px;
   color: #333;
   font-weight: 500;
   margin-bottom: 10px;
 }
 
+.choice {
+  margin: 2px 0;
+}
+
+.signup-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.signup-roles label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #222;
+  cursor: pointer;
+}
+
+.signup-roles input[type="radio"] {
+  accent-color: #6a6cf0;
+}
+
+/* Form fields */
 .form {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-.form input {
+.form input:not([type="radio"]) {
+  width: 100%;
   padding: 14px 16px;
   border: none;
   border-radius: 10px;
   background: #eeece6;
+  font-family: Arial, sans-serif;
   font-size: 14px;
   outline: none;
 }
 
-.form input:focus {
+.form input:not([type="radio"]):focus {
   box-shadow: 0 0 0 2px #6a6cf0;
 }
 
+/* Buttons */
 .form button {
+  width: 100%;
   padding: 14px;
   border: none;
   border-radius: 10px;
@@ -111,19 +174,17 @@ body {
   color: #fff;
   font-size: 15px;
   cursor: pointer;
-  font-style: none;
 }
 
-#or{
-   font-size: 7px;
-   font-weight: 300 ;
-   padding-left: 165px;
+.form button:hover {
+  background: #333;
 }
 
+/* Messages and footer links */
 .form__note {
   font-size: 13px;
   color: #555;
-
+  line-height: 1.5;
 }
 
 .form__note a {
@@ -131,5 +192,58 @@ body {
   text-decoration: none;
 }
 
+.form__note a:hover {
+  text-decoration: underline;
+}
 
+.signup-message {
+  color: #c0392b;
+}
 
+/* Screen-reader-only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+  .signup-page {
+    padding: 14px;
+    align-items: flex-start;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .card__visual {
+    min-height: 220px;
+    max-height: 260px;
+  }
+
+  .card__visual > video {
+    height: 240px;
+    min-height: 240px;
+  }
+
+  .card__form {
+    padding: 20px 14px;
+    gap: 16px;
+  }
+
+  .heading__large {
+    font-size: 36px;
+    margin-top: 8px;
+  }
+}
