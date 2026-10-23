@@ -5,9 +5,11 @@ MedicoEd gives medical students an engaging, user-friendly way to learn. The cur
 ## Screenshots
  
 <p align="center">
-  <img width="642" height="733" alt="MedicoEd screenshot 1" src="https://github.com/user-attachments/assets/4de031f1-3b17-405f-b8ec-d016e114ddc4" />
-  <img width="563" height="612" alt="MedicoEd screenshot 2" src="https://github.com/user-attachments/assets/632e7af5-34cb-4e4a-8705-27ccea83afe4" />
-  <img width="770" height="563" alt="MedicoEd screenshot 3" src="https://github.com/user-attachments/assets/4af669f9-4371-4ed1-a0a2-00189ee16791" />
+ <img width="638" height="436" alt="image" src="https://github.com/user-attachments/assets/c83b8a13-b6cf-40c8-98aa-09638ee1f09a" />
+ <img width="881" height="582" alt="image" src="https://github.com/user-attachments/assets/9c980ab2-a7c7-44cd-9cc4-f40ea07f973b" />
+
+ 
+
 </p>
 ## Table of Contents
  
