@@ -1,18 +1,25 @@
-
 import "./login.css";
+import "./signup.css";
+import "./welcome.css";
+
 import { useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ScratchVideo from "./ScratchVideo";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
   const navigate = useNavigate();
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(
+    event: FormEvent<HTMLFormElement>
+  ) {
     event.preventDefault();
+
     setMessage("");
+    setIsLoading(true);
 
     try {
       const response = await fetch("http://localhost:3000/login", {
@@ -43,18 +50,24 @@ export default function Login() {
           ? error.message
           : "Could not connect to the backend."
       );
+    } finally {
+      setIsLoading(false);
     }
   }
 
   return (
     <main className="login-page">
       <section className="login-card">
+
+        {/* LEFT SIDE: IMAGE */}
         <div className="login-visual">
-          <ScratchVideo
-            src="/src/dandk7sciencefacts_ssspin.io_1792676016.mp4"
+          <img
+            src="\src\Black Pink Minimalist Simple Modern Illustrated  Cafe Business Poster.png"
+            alt="MedicoEd welcome illustration"
           />
         </div>
 
+        {/* RIGHT SIDE: LOGIN FORM */}
         <div className="login-form-panel">
           <Link to="/signup" className="back">
             &larr; Create account
@@ -62,6 +75,7 @@ export default function Login() {
 
           <div className="heading">
             <p className="heading__large">Log in</p>
+
             <h1 className="heading__small">
               Welcome back to MedicoEd.
             </h1>
@@ -92,13 +106,16 @@ export default function Login() {
               </p>
             )}
 
-            <button type="submit">Log in</button>
+            <button type="submit" disabled={isLoading}>
+              {isLoading ? "Logging in..." : "Log in"}
+            </button>
           </form>
 
           <p className="form__note">
             New to MedicoEd? <Link to="/signup">Sign up</Link>
           </p>
         </div>
+
       </section>
     </main>
   );

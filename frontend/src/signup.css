@@ -6,12 +6,7 @@
   box-sizing: border-box;
 }
 
-/* Page background */
-body {
-  min-height: 100vh;
-  background-clip: ;
-  font-family: Georgia, serif;
-}
+/* Page backgro
 
 /* Main two-column card */
 .card {
@@ -34,7 +29,9 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px;
+  background-color: #111;
 }
+
 
 /* Left-side video */
 .card__visual {
