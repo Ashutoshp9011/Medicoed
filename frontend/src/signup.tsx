@@ -23,6 +23,7 @@ function Signup() {
     try {
       const response = await fetch("http://localhost:3000/users", {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
@@ -43,10 +44,8 @@ function Signup() {
         throw new Error(result.message || "Signup failed.");
       }
 
-      sessionStorage.setItem(
-        "userName",
-        result.user?.name || name.trim()
-      );
+      // The backend must create the session after successful signup.
+      // Do not use sessionStorage as proof of authentication.
 
       navigate("/welcome");
     } catch (error: unknown) {
@@ -139,9 +138,7 @@ function Signup() {
                     name="role"
                     value="student"
                     checked={role === "student"}
-                    onChange={(event) =>
-                      setRole(event.target.value)
-                    }
+                    onChange={(event) => setRole(event.target.value)}
                     required
                   />
                   Student
@@ -154,9 +151,7 @@ function Signup() {
                     name="role"
                     value="educator"
                     checked={role === "educator"}
-                    onChange={(event) =>
-                      setRole(event.target.value)
-                    }
+                    onChange={(event) => setRole(event.target.value)}
                   />
                   Educator
                 </label>
@@ -168,9 +163,7 @@ function Signup() {
                     name="role"
                     value="admin"
                     checked={role === "admin"}
-                    onChange={(event) =>
-                      setRole(event.target.value)
-                    }
+                    onChange={(event) => setRole(event.target.value)}
                   />
                   Admin
                 </label>
@@ -205,4 +198,4 @@ function Signup() {
   );
 }
 
-export default Signup
+export default Signup;

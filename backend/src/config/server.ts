@@ -1,5 +1,12 @@
 import mongoose from "mongoose";
+import "dotenv/config";
 import app from "./app";
+
+const PORT = Number(process.env.PORT) || 3000;
+
+const MONGODB_URI =
+  process.env.MONGODB_URI ??
+  "mongodb://127.0.0.1:27017/ngoDatabase";
 
 async function startServer() {
   try {
@@ -7,12 +14,12 @@ async function startServer() {
       "mongodb://127.0.0.1:27017/ngoDatabase"
     );
 
-    console.log("MongoDB connected");
+      console.log("MongoDB connected successfully");
 
-    app.listen(3000, () => {
-      console.log("Backend running on http://localhost:3000");
+    app.listen(PORT, () => {
+      console.log(`Backend running on http://localhost:${PORT}`);
     });
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Failed to start backend:", error);
     process.exit(1);
   }
